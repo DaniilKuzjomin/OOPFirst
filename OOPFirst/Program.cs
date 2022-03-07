@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,7 @@ namespace OOPFirst
 
 
 
-
+            /*
             inimene naine = new inimene("Marina", Emakeel.saksa, Sugu.naine);
             //naine.Tervitame();
             naine.Palk = 1000;
@@ -63,6 +64,14 @@ namespace OOPFirst
             //inimene m = new inimene("Petja", Sugu.mees);
             //m.Eesnimi = "Peter";
             //Console.WriteLine("Minu nimi on {0} ja minu sugu on {1}", m.Eesnimi, Sugu.mees);
+            */
+
+            Opilane o = new Opilane("Kati", "TARpv21",2);
+            o.Hinne = 4;
+            o.Information();
+
+            o.idontknow();
+
 
             Console.ReadLine();
         }

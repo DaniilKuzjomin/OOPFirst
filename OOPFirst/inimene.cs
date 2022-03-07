@@ -34,10 +34,9 @@ namespace OOPFirst
             this.emakeel = emakeel;
         }
 
-        public inimene(string Eesnimi, Sugu sugu)
+        public inimene(string Eesnimi)
         {
             eesnimi = Eesnimi;
-            this.sugu = sugu;
         }
 
 
