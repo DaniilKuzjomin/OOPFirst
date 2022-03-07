@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace OOPFirst
 {
-    public enum Emakeel
+    public enum Sugu
     {
-        eesti,
-        vene,
-        saksa,
-        rootsi,
+        mees,
+        naine,
     }
 }

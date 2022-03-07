@@ -8,13 +8,17 @@ namespace OOPFirst
 {
     public class inimene
     {
-        string eesnimi; // Поля
+
+
+
+        //ПОЛЯ
+        string eesnimi;
         int vanus;
-        string staatus;
-        string sugu;
         int kasv;
         string stat;
         Emakeel emakeel;
+        Sugu sugu;
+        int palk;
 
 
 
@@ -22,24 +26,37 @@ namespace OOPFirst
 
 
 
-
-        public inimene() { } // Конструктор
+        //КОНСТРУКТОРА
+        public inimene() { }
         public inimene(string Eesnimi, Emakeel emakeel)
         {
             eesnimi = Eesnimi;
             this.emakeel = emakeel;
         }
 
+        public inimene(string Eesnimi, Sugu sugu)
+        {
+            eesnimi = Eesnimi;
+            this.sugu = sugu;
+        }
 
 
-        //public inimene() { }
-        //public inimene(string Sugu, int Kasv)
-        //{
-        //    sugu = Sugu;
-        //    kasv = Kasv;
-        //}
 
 
+
+
+
+        // СВОЙСТВА
+        public int Palk
+        {
+            set { palk = value; }
+            get { return palk; }
+        }
+
+        public Sugu Sugu
+        {
+            get { return sugu; }
+        }
 
         public string Eesnimi
         {
@@ -48,41 +65,12 @@ namespace OOPFirst
                 if (eesnimi == null) eesnimi = value;
             }
             get { return eesnimi; }
-        } // Св-ва
+        } 
         public int Vanus
         {
             set 
-            { vanus = value;
-                if (vanus<7)
-                {
-                    staatus = "Väike laps";
-                }
-                else if (vanus<17)
-                {
-                    staatus = "Kooli laps";
-                }
-                else if (vanus<65)
-                {
-                    staatus = "tööline inimene";
-                }
-                else
-                {
-                    staatus = "Senior";
-                }
-            }
+            { vanus = value; }
             get { return vanus; }
-        }
-        public string Staatus
-        {
-            set { staatus = value; }
-            get { return staatus; }
-        }
-
-        public string Sugu
-        {
-            set 
-            { if (sugu == null) sugu = value; }
-            get { return sugu; }
         }
 
         public int Kasv
@@ -106,17 +94,49 @@ namespace OOPFirst
             get { return kasv; }
         }
 
+        public string Staatus
+        {
+            get
+            {
+                var staatus = "";
+                if (vanus < 7)
+                {
+                    staatus = "Väike laps";
+                }
+                else if (vanus < 17)
+                {
+                    staatus = "Kooli laps";
+                }
+                else if (vanus < 65)
+                {
+                    staatus = "tööline inimene";
+                }
+                else
+                {
+                    staatus = "Senior";
+                }
+                return staatus;
+            }
+        }
 
-        public void Tervitame() // Метод
+        //МЕТОДЫ
+        public void Tervitame() 
         {
             Console.WriteLine("Tere!");
-            Console.WriteLine("Minu nimi on {0}. Olen {1} aastat vana. Minu staatus on {2}", eesnimi, vanus, staatus );
+            Console.WriteLine("Minu nimi on {0}. Olen {1} aastat vana. Minu staatus on {2}", eesnimi, vanus, Staatus );
         }
 
         public void Pool()
         {
             Console.WriteLine("Tervist!");
             Console.WriteLine("Minu kasv on {0} ja minu sugu on {1}", stat, sugu);
+        }
+
+        public double Tulumaks()
+        {
+            double tulu = 0;
+            tulu = palk * 0.2;
+            return tulu;
         }
     }
 }
